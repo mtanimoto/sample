@@ -4,9 +4,7 @@ class CarList extends Nav
 {
     private $_title;
 
-    private static $_instance;
-
-    private function __construct()
+    protected function __construct()
     {
         $this->_title = "中古車一覧";
     }
@@ -26,14 +24,6 @@ class CarList extends Nav
         }
 
         confirmNumber("メニューに戻るには何かキーを入力して下さい。");
-    }
-
-    public static function getInstance(): CarList
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new CarList();
-        }
-        return self::$_instance;
     }
 
     public function printCarInfo(Car $car): void

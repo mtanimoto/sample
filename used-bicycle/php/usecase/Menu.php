@@ -4,9 +4,7 @@ class Menu extends Nav
 {
     private $_title;
 
-    private static $_instance;
-
-    private function __construct()
+    protected function __construct()
     {
         $this->_title = "中古車販売メニュー";
     }
@@ -22,14 +20,6 @@ class Menu extends Nav
             99. 終了
         ";
         p(str_replace(" ", "", $menu));
-    }
-
-    public static function getInstance(): Menu
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new Menu();
-        }
-        return self::$_instance;
     }
 
     public function validValue(string $input): bool

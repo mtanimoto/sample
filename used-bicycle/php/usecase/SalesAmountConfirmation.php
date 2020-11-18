@@ -4,9 +4,7 @@ class SalesAmountConfirmation extends Nav
 {
     private $_title;
 
-    private static $_instance;
-
-    private function __construct()
+    protected function __construct()
     {
         $this->_title = "売上確認";
     }
@@ -25,13 +23,5 @@ class SalesAmountConfirmation extends Nav
         p("現在の売上合計は {$amount}万 です。");
         p("");
         confirmNumber("メニューに戻るには何かキーを入力して下さい。");
-    }
-
-    public static function getInstance(): SalesAmountConfirmation
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new SalesAmountConfirmation();
-        }
-        return self::$_instance;
     }
 }

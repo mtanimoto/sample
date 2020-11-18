@@ -2,6 +2,8 @@
 
 abstract class Nav
 {
+    private static $_instances = [];
+
     protected function printTitle(string $title): void
     {
         for ($i = 0; $i < 40; $i++) {
@@ -28,6 +30,15 @@ abstract class Nav
         echo PHP_EOL;
     }
 
-    abstract function printContent(): void;
-    abstract static function getInstance();
+    public static function getInstance()
+    {
+        $class = get_called_class();
+        if (!isset(self::$_instances[$class])) {
+            self::$_instances[$class] = new $class;
+        }
+        return self::$_instances[$class];
+    }
+
+    abstract public function printContent(): void;
+
 }

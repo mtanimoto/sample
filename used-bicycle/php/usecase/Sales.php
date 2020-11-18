@@ -4,9 +4,7 @@ class Sales extends Nav
 {
     private $_title;
 
-    private static $_instance;
-
-    private function __construct()
+    protected function __construct()
     {
         $this->_title = "販売";
     }
@@ -55,13 +53,5 @@ class Sales extends Nav
             return $car->getNumber() === $n;
         });
         return count($car) === 1;
-    }
-
-    public static function getInstance(): Sales
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new Sales();
-        }
-        return self::$_instance;
     }
 }

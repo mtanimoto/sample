@@ -4,9 +4,7 @@ class CarRegistration extends Nav
 {
     private $_title;
 
-    private static $_instance;
-
-    private function __construct()
+    protected function __construct()
     {
         $this->_title = "新規登録";
     }
@@ -34,14 +32,6 @@ class CarRegistration extends Nav
         if ($input === 99) {
             return;
         }
-    }
-
-    public static function getInstance(): CarRegistration
-    {
-        if (is_null(self::$_instance)) {
-            self::$_instance = new CarRegistration();
-        }
-        return self::$_instance;
     }
 
     private function _confirmCarType(): string
@@ -94,6 +84,6 @@ class CarRegistration extends Nav
             return intval($input);
         }
 
-        return $this->_confirm();
+        return $this->_confirmRegistration();
     }
 }
