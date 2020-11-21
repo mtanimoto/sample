@@ -1,0 +1,36 @@
+<div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <form id="form-register">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="register-modal-label">新規登録</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="type">車種</label>
+                        <input type="text" class="form-control" id="type" name="type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">値段</label>
+                        <input type="text" class="form-control" id="price" name="price" maxlength="32">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">色</label>
+                        <input type="text" class="form-control" id="color" name="color" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="remark">備考</label>
+                        <textarea class="form-control" id="remark" name="remark"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary btn-save">登録</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
